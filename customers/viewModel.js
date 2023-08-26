@@ -7,6 +7,7 @@ customerViewModel.create = (customerData) => {
     customerCreateViewModel.email =  customerData.email;
     customerCreateViewModel.phone = customerData.phone;
     customerCreateViewModel.description=  customerData.description;
+    customerCreateViewModel.address = customerData.address;
 
     return customerCreateViewModel;
 }

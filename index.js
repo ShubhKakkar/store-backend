@@ -24,6 +24,9 @@ const paymentRouter = require("./payments/routes");
 const customerPaymentRouter = require("./customerPayment/routes");
 const orderRouter = require("./order/routes");
 const customerOrderRouter = require("./customerOrder/routes");
+const connection = require("./utils/connection");
+
+connection();
 
 app.get("/", (req, res) => {
   res.status(201).json("Store server");

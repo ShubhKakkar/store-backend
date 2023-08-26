@@ -4,7 +4,18 @@ const customerDbHelpers = require("./dbHelpers");
 const customerControllers = {};
 
 customerControllers.createCustomer = async({ body }) => {
-  if (!body.name || !body.email || !body.phone || !body.description) {
+  if (
+    !body.name ||
+    !body.email ||
+    !body.phone ||
+    !body.description ||
+    !body.address ||
+    !body.address.line1 ||
+    !body.address.city ||
+    !body.address.state ||
+    !body.address.postal_code ||
+    !body.address.country
+  ) {
     return "Incomplete information";
   }
   const customerView = customerViewModel.create(body);
